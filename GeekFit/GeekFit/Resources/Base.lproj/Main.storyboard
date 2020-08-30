@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ccZ-iw-DP2">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Map View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MapViewController" customModule="GeekFit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GBd-ip-MxC" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="88" width="414" height="683"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XDv-qP-cic" userLabel="btnMyCurrentLocaion">
+                                <rect key="frame" x="354" y="561" width="40" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="64Z-pR-1cd"/>
+                                    <constraint firstAttribute="height" constant="40" id="yn4-Ts-zNn"/>
+                                </constraints>
+                                <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="location" catalog="system"/>
+                                <connections>
+                                    <action selector="btnMyCurrentLocationClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sHe-Of-iqB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d8D-6M-W54" userLabel="btnTrafficOnOff">
+                                <rect key="frame" x="354" y="621" width="40" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="2JG-Eo-TBA"/>
+                                    <constraint firstAttribute="height" constant="40" id="Dhe-gi-Z3D"/>
+                                </constraints>
+                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="car" catalog="system"/>
+                                <connections>
+                                    <action selector="trafficOnOffClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LZL-gP-WpU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6jN-l3-yJR" userLabel="zoomIn">
+                                <rect key="frame" x="354" y="666" width="40" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="RX7-Sy-7T9"/>
+                                    <constraint firstAttribute="height" constant="40" id="u1d-dM-mOW"/>
+                                </constraints>
+                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="plus" catalog="system"/>
+                                <connections>
+                                    <action selector="zoomInClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kau-3r-Vhm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sjZ-TF-Dbn" userLabel="zoomOut">
+                                <rect key="frame" x="354" y="711" width="40" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="0NY-jJ-kdx"/>
+                                    <constraint firstAttribute="height" constant="40" id="KPc-nb-Jgg"/>
+                                </constraints>
+                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="minus" catalog="system"/>
+                                <connections>
+                                    <action selector="zoomOutClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jlp-iO-NwF"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="vni-Uq-yqy" userLabel="mapType">
+                                <rect key="frame" x="67.5" y="821" width="279" height="32"/>
+                                <segments>
+                                    <segment title="Normal"/>
+                                    <segment title="Hybrid"/>
+                                    <segment title="Satellite"/>
+                                    <segment title="Terrain"/>
+                                </segments>
+                                <connections>
+                                    <action selector="mapTypeChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Ixv-UL-Zfw"/>
+                                </connections>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yII-Iv-JP2" userLabel="btnStartDetectLocation">
+                                <rect key="frame" x="67.5" y="781" width="279" height="30"/>
+                                <color key="backgroundColor" red="0.20000000000000001" green="0.40000000000000002" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Отслеживать"/>
+                                <connections>
+                                    <action selector="btnStartDetectionClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5VP-hL-mOd"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sjZ-TF-Dbn" secondAttribute="trailing" constant="20" id="ATz-m0-FbD"/>
+                            <constraint firstItem="sjZ-TF-Dbn" firstAttribute="bottom" secondItem="GBd-ip-MxC" secondAttribute="bottom" constant="-20" id="Bdp-ts-qc9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GBd-ip-MxC" secondAttribute="trailing" id="FBU-rO-zqE"/>
+                            <constraint firstItem="d8D-6M-W54" firstAttribute="top" secondItem="XDv-qP-cic" secondAttribute="bottom" constant="20" id="LVH-3H-PIK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="d8D-6M-W54" secondAttribute="trailing" constant="20" id="Lcl-FE-WWh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="vni-Uq-yqy" secondAttribute="bottom" constant="10" id="LnF-75-hsm"/>
+                            <constraint firstItem="sjZ-TF-Dbn" firstAttribute="top" secondItem="6jN-l3-yJR" secondAttribute="bottom" constant="5" id="P5b-Kb-38e"/>
+                            <constraint firstItem="vni-Uq-yqy" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="lls-YZ-kNt"/>
+                            <constraint firstItem="yII-Iv-JP2" firstAttribute="bottom" secondItem="vni-Uq-yqy" secondAttribute="top" constant="-10" id="m0a-Qm-UQM"/>
+                            <constraint firstItem="yII-Iv-JP2" firstAttribute="width" secondItem="vni-Uq-yqy" secondAttribute="width" id="mHQ-UH-OuU"/>
+                            <constraint firstItem="yII-Iv-JP2" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="qzX-Po-YEf"/>
+                            <constraint firstItem="d8D-6M-W54" firstAttribute="bottom" secondItem="6jN-l3-yJR" secondAttribute="top" constant="-5" id="sJL-jv-UL5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6jN-l3-yJR" secondAttribute="trailing" constant="20" id="skZ-Ve-Fxl"/>
+                            <constraint firstItem="GBd-ip-MxC" firstAttribute="bottom" secondItem="yII-Iv-JP2" secondAttribute="top" constant="-10" id="x0b-Sz-eMS"/>
+                            <constraint firstItem="GBd-ip-MxC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="xdO-vW-mJy"/>
+                            <constraint firstItem="GBd-ip-MxC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="xug-vb-kEJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XDv-qP-cic" secondAttribute="trailing" constant="20" id="z7C-ts-b5r"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="g8j-cy-2dY">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="mappin.and.ellipse" catalog="system" id="y0V-BV-a1c" userLabel="btnAddMarker">
+                            <connections>
+                                <action selector="btnAddMarkerClicked:" destination="BYZ-38-t0r" id="oMe-Qd-0Gl"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Доиой" image="house" catalog="system" id="fMX-hD-IjS" userLabel="btnHome">
+                            <connections>
+                                <action selector="goHome:" destination="BYZ-38-t0r" id="hqi-xg-1pv"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="btnMyCurrentLocation" destination="XDv-qP-cic" id="bct-SS-2dn"/>
+                        <outlet property="btnStartDetection" destination="yII-Iv-JP2" id="OPh-St-cGz"/>
+                        <outlet property="btnTrafficOnOff" destination="d8D-6M-W54" id="B63-Gk-va9"/>
+                        <outlet property="mapType" destination="vni-Uq-yqy" id="d2H-FN-Lwt"/>
+                        <outlet property="mapView" destination="GBd-ip-MxC" id="TRG-NQ-C8M"/>
+                        <outlet property="zoomIn" destination="6jN-l3-yJR" id="n9a-CX-qaf"/>
+                        <outlet property="zoomOut" destination="sjZ-TF-Dbn" id="taV-p2-xPk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="137.94642857142856"/>
+        </scene>
+        <!--Result View Controller-->
+        <scene sceneID="2pr-Tr-1MZ">
+            <objects>
+                <viewController storyboardIdentifier="resultViewController" id="uH7-Au-YdY" customClass="ResultViewController" customModule="GeekFit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NJx-r3-ZRP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bm9-Xc-IJU">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="resultCell" textLabel="AfZ-sL-PoV" detailTextLabel="ILB-hm-63H" style="IBUITableViewCellStyleSubtitle" id="hjh-Rd-SD5" customClass="ResultViewCell" customModule="GeekFit" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="55.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hjh-Rd-SD5" id="r4m-zT-xLd">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="55.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AfZ-sL-PoV">
+                                                    <rect key="frame" x="20" y="10" width="33.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ILB-hm-63H">
+                                                    <rect key="frame" x="20" y="31.5" width="44" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="8m1-ud-6uM" firstAttribute="bottom" secondItem="bm9-Xc-IJU" secondAttribute="bottom" id="9aU-Ri-Scz"/>
+                            <constraint firstItem="bm9-Xc-IJU" firstAttribute="leading" secondItem="8m1-ud-6uM" secondAttribute="leading" id="fbm-c1-NVK"/>
+                            <constraint firstItem="bm9-Xc-IJU" firstAttribute="top" secondItem="8m1-ud-6uM" secondAttribute="top" id="jA9-Dw-V3t"/>
+                            <constraint firstItem="8m1-ud-6uM" firstAttribute="trailing" secondItem="bm9-Xc-IJU" secondAttribute="trailing" id="n5p-dP-thg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8m1-ud-6uM"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="bm9-Xc-IJU" id="Vtn-jX-P0B"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TmZ-3b-XCE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2063" y="145"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="grk-Qx-Tx6">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ccZ-iw-DP2" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dzw-eE-lgU">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="OWv-vu-zKc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZaO-8c-4pg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="car" catalog="system" width="128" height="93"/>
+        <image name="house" catalog="system" width="128" height="110"/>
+        <image name="location" catalog="system" width="128" height="115"/>
+        <image name="mappin.and.ellipse" catalog="system" width="118" height="128"/>
+        <image name="minus" catalog="system" width="128" height="24"/>
+        <image name="plus" catalog="system" width="128" height="113"/>
+    </resources>
+</document>
