@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ccZ-iw-DP2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ccZ-iw-DP2">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -84,7 +84,7 @@
                                 </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yII-Iv-JP2" userLabel="btnStartDetectLocation">
-                                <rect key="frame" x="67.5" y="781" width="279" height="30"/>
+                                <rect key="frame" x="67.5" y="781" width="199.5" height="30"/>
                                 <color key="backgroundColor" red="0.20000000000000001" green="0.40000000000000002" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Отслеживать"/>
@@ -92,9 +92,20 @@
                                     <action selector="btnStartDetectionClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5VP-hL-mOd"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MUt-BL-OAu" userLabel="btnWorkoutList">
+                                <rect key="frame" x="277" y="781" width="69.5" height="30"/>
+                                <color key="backgroundColor" red="0.20000000000000001" green="0.40000000000000002" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="list.bullet" catalog="system"/>
+                                <connections>
+                                    <action selector="btnWorkoutListClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CM1-QS-sUm"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="yII-Iv-JP2" firstAttribute="leading" secondItem="vni-Uq-yqy" secondAttribute="leading" id="3yl-6q-XPe"/>
+                            <constraint firstItem="MUt-BL-OAu" firstAttribute="leading" secondItem="yII-Iv-JP2" secondAttribute="trailing" constant="10" id="9I4-De-2Eg"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sjZ-TF-Dbn" secondAttribute="trailing" constant="20" id="ATz-m0-FbD"/>
                             <constraint firstItem="sjZ-TF-Dbn" firstAttribute="bottom" secondItem="GBd-ip-MxC" secondAttribute="bottom" constant="-20" id="Bdp-ts-qc9"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GBd-ip-MxC" secondAttribute="trailing" id="FBU-rO-zqE"/>
@@ -102,12 +113,14 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="d8D-6M-W54" secondAttribute="trailing" constant="20" id="Lcl-FE-WWh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="vni-Uq-yqy" secondAttribute="bottom" constant="10" id="LnF-75-hsm"/>
                             <constraint firstItem="sjZ-TF-Dbn" firstAttribute="top" secondItem="6jN-l3-yJR" secondAttribute="bottom" constant="5" id="P5b-Kb-38e"/>
+                            <constraint firstItem="vni-Uq-yqy" firstAttribute="top" secondItem="MUt-BL-OAu" secondAttribute="bottom" constant="10" id="alt-N0-4Mp"/>
+                            <constraint firstItem="MUt-BL-OAu" firstAttribute="trailing" secondItem="vni-Uq-yqy" secondAttribute="trailing" id="bwD-Rv-40m"/>
+                            <constraint firstItem="yII-Iv-JP2" firstAttribute="width" secondItem="vni-Uq-yqy" secondAttribute="width" multiplier="1:1.4" id="k2C-10-QVb"/>
                             <constraint firstItem="vni-Uq-yqy" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="lls-YZ-kNt"/>
                             <constraint firstItem="yII-Iv-JP2" firstAttribute="bottom" secondItem="vni-Uq-yqy" secondAttribute="top" constant="-10" id="m0a-Qm-UQM"/>
-                            <constraint firstItem="yII-Iv-JP2" firstAttribute="width" secondItem="vni-Uq-yqy" secondAttribute="width" id="mHQ-UH-OuU"/>
-                            <constraint firstItem="yII-Iv-JP2" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="qzX-Po-YEf"/>
                             <constraint firstItem="d8D-6M-W54" firstAttribute="bottom" secondItem="6jN-l3-yJR" secondAttribute="top" constant="-5" id="sJL-jv-UL5"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6jN-l3-yJR" secondAttribute="trailing" constant="20" id="skZ-Ve-Fxl"/>
+                            <constraint firstItem="MUt-BL-OAu" firstAttribute="height" secondItem="yII-Iv-JP2" secondAttribute="height" id="wsl-Jz-Nxf"/>
                             <constraint firstItem="GBd-ip-MxC" firstAttribute="bottom" secondItem="yII-Iv-JP2" secondAttribute="top" constant="-10" id="x0b-Sz-eMS"/>
                             <constraint firstItem="GBd-ip-MxC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="xdO-vW-mJy"/>
                             <constraint firstItem="GBd-ip-MxC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="xug-vb-kEJ"/>
@@ -131,6 +144,7 @@
                         <outlet property="btnMyCurrentLocation" destination="XDv-qP-cic" id="bct-SS-2dn"/>
                         <outlet property="btnStartDetection" destination="yII-Iv-JP2" id="OPh-St-cGz"/>
                         <outlet property="btnTrafficOnOff" destination="d8D-6M-W54" id="B63-Gk-va9"/>
+                        <outlet property="btnWorkoutList" destination="MUt-BL-OAu" id="2LI-O2-ncL"/>
                         <outlet property="mapType" destination="vni-Uq-yqy" id="d2H-FN-Lwt"/>
                         <outlet property="mapView" destination="GBd-ip-MxC" id="TRG-NQ-C8M"/>
                         <outlet property="zoomIn" destination="6jN-l3-yJR" id="n9a-CX-qaf"/>
@@ -140,6 +154,73 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="137.94642857142856"/>
+        </scene>
+        <!--Workout List View Controller-->
+        <scene sceneID="Dzy-1p-7rD">
+            <objects>
+                <viewController storyboardIdentifier="workoutListController" id="3vi-QU-QzK" customClass="WorkoutListViewController" customModule="GeekFit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fqH-58-rvU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cxf-nd-bHo">
+                                <rect key="frame" x="0.0" y="84" width="414" height="778"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="workoutCell" textLabel="iZN-Xk-YoA" detailTextLabel="yd4-AR-FYc" style="IBUITableViewCellStyleSubtitle" id="Npf-aE-Fyh">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="55.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Npf-aE-Fyh" id="AA7-Wd-a1v">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="55.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iZN-Xk-YoA">
+                                                    <rect key="frame" x="20" y="10" width="33.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="yd4-AR-FYc">
+                                                    <rect key="frame" x="20" y="31.5" width="44" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xB2-HR-TgJ" userLabel="closeBtn">
+                                <rect key="frame" x="386" y="49" width="18" height="30"/>
+                                <state key="normal" image="xmark" catalog="system"/>
+                                <connections>
+                                    <action selector="btnCloseClicked:" destination="3vi-QU-QzK" eventType="touchUpInside" id="q4Q-fI-zEv"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="cxf-nd-bHo" firstAttribute="leading" secondItem="UJK-Sp-jcE" secondAttribute="leading" id="27G-CJ-ikP"/>
+                            <constraint firstItem="cxf-nd-bHo" firstAttribute="top" secondItem="xB2-HR-TgJ" secondAttribute="bottom" constant="5" id="Fei-mC-Wqe"/>
+                            <constraint firstItem="UJK-Sp-jcE" firstAttribute="trailing" secondItem="xB2-HR-TgJ" secondAttribute="trailing" constant="10" id="L0U-dZ-15W"/>
+                            <constraint firstItem="UJK-Sp-jcE" firstAttribute="bottom" secondItem="cxf-nd-bHo" secondAttribute="bottom" id="X23-X2-taI"/>
+                            <constraint firstItem="UJK-Sp-jcE" firstAttribute="trailing" secondItem="cxf-nd-bHo" secondAttribute="trailing" id="ZRi-gp-niT"/>
+                            <constraint firstItem="cxf-nd-bHo" firstAttribute="top" secondItem="UJK-Sp-jcE" secondAttribute="top" constant="40" id="dDo-MB-YWJ"/>
+                            <constraint firstItem="xB2-HR-TgJ" firstAttribute="top" secondItem="UJK-Sp-jcE" secondAttribute="top" constant="5" id="rKF-gB-dDU"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="UJK-Sp-jcE"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="mDD-V4-Uuh"/>
+                    <connections>
+                        <outlet property="workoutTable" destination="cxf-nd-bHo" id="R59-CH-iJP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eb5-BI-46y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1855" y="138"/>
         </scene>
         <!--Result View Controller-->
         <scene sceneID="2pr-Tr-1MZ">
@@ -195,7 +276,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TmZ-3b-XCE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2063" y="145"/>
+            <point key="canvasLocation" x="138" y="806"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="grk-Qx-Tx6">
@@ -219,9 +300,11 @@
     <resources>
         <image name="car" catalog="system" width="128" height="93"/>
         <image name="house" catalog="system" width="128" height="110"/>
+        <image name="list.bullet" catalog="system" width="128" height="88"/>
         <image name="location" catalog="system" width="128" height="115"/>
         <image name="mappin.and.ellipse" catalog="system" width="118" height="128"/>
         <image name="minus" catalog="system" width="128" height="24"/>
         <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
     </resources>
 </document>
