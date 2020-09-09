@@ -17,7 +17,7 @@ protocol LocationServiceProto {
     func didUpdateIsInactive(_ manager: CLLocationManager, coordinate: CLLocationCoordinate2D?)
 }
 
-class LocationService: NSObject {
+final class LocationService: NSObject {
     static let shared = LocationService()
     private(set) var locationManager: CLLocationManager?
     
@@ -44,6 +44,9 @@ class LocationService: NSObject {
     // Последняя известная нам координата
     private(set) var lastKnownLocation: CLLocationCoordinate2D?
     
+    // Первая извесная нам координата - для расчета расстояния
+    private(set) var firstKnownLocation: CLLocationCoordinate2D?
+    
     override init() {
         super.init()
         
@@ -59,6 +62,9 @@ class LocationService: NSObject {
     
     // Запуск обновления позиции
     func start() {
+        firstKnownLocation = nil
+        lastKnownLocation = nil
+        
         isUpdateLocationStarted = true
         locationManager?.startUpdatingLocation()
         delegate?.willUpdateLocationStarted()
@@ -66,6 +72,9 @@ class LocationService: NSObject {
     
     // Остановка обновления позиции
     func stop() {
+        firstKnownLocation = nil
+        lastKnownLocation = nil
+        
         isUpdateLocationStarted = false
         locationManager?.stopUpdatingLocation()
         delegate?.willUpdateLocationStopped()
@@ -80,6 +89,11 @@ class LocationService: NSObject {
         
         // Сохраним последнее известное положение
         lastKnownLocation = coordinate
+        
+        // Если нет координаты - значит она будет первой
+        if firstKnownLocation == nil {
+            firstKnownLocation = coordinate
+        }
     }
     
     // Получаем текущую позицию

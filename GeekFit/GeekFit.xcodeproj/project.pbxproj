@@ -9,11 +9,17 @@
 /* Begin PBXBuildFile section */
 		070685922503CC33002A0A82 /* TrackService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070685912503CC33002A0A82 /* TrackService.swift */; };
 		070685962503DC36002A0A82 /* WorkoutListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070685952503DC36002A0A82 /* WorkoutListViewController.swift */; };
+		0706E861250542C600CA9DD8 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0706E860250542C600CA9DD8 /* BaseCoordinator.swift */; };
+		0706E8632505450500CA9DD8 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0706E8622505450500CA9DD8 /* ApplicationCoordinator.swift */; };
+		0706E8652505454800CA9DD8 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0706E8642505454800CA9DD8 /* MainCoordinator.swift */; };
 		071ED84425012FD5008FB556 /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071ED84325012FD5008FB556 /* RealmService.swift */; };
 		071ED84725013009008FB556 /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071ED84625013009008FB556 /* Path.swift */; };
 		071ED84925013020008FB556 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071ED84825013020008FB556 /* Workout.swift */; };
 		0724D6702504FB1600A4C33B /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0724D66F2504FB1600A4C33B /* AppManager.swift */; };
-		0724D6722505051F00A4C33B /* MapViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0724D6712505051F00A4C33B /* MapViewController+Ext.swift */; };
+		079303402509201300981E31 /* EndWorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0793033F2509201300981E31 /* EndWorkoutViewController.swift */; };
+		079529822506811700EF63F8 /* Users.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 079529812506811700EF63F8 /* Users.storyboard */; };
+		079529852506818300EF63F8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079529842506818300EF63F8 /* LoginViewController.swift */; };
+		07952987250683EC00EF63F8 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07952986250683EC00EF63F8 /* LoginCoordinator.swift */; };
 		079AEDE124FB64B90038C2B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079AEDE024FB64B90038C2B0 /* AppDelegate.swift */; };
 		079AEDE324FB64B90038C2B0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079AEDE224FB64B90038C2B0 /* SceneDelegate.swift */; };
 		079AEDE524FB64B90038C2B0 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079AEDE424FB64B90038C2B0 /* MapViewController.swift */; };
@@ -24,7 +30,10 @@
 		079AEE0324FB64BE0038C2B0 /* GeekFitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079AEE0224FB64BE0038C2B0 /* GeekFitUITests.swift */; };
 		07B4EB872503C0FB000AF8BE /* WorkoutService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B4EB862503C0FB000AF8BE /* WorkoutService.swift */; };
 		07B4EB892503C117000AF8BE /* LocationServiceProto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B4EB882503C117000AF8BE /* LocationServiceProto.swift */; };
+		07C39EAB2507B12100ABBC23 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C39EAA2507B12100ABBC23 /* User.swift */; };
+		07C39EAE2507B2A800ABBC23 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C39EAD2507B2A800ABBC23 /* UserService.swift */; };
 		07DC955324FBBFC1007923D3 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DC955224FBBFC1007923D3 /* UIViewController+Ext.swift */; };
+		07E2761E25069B65003ADBDD /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E2761D25069B65003ADBDD /* RegisterViewController.swift */; };
 		1150A97A2AE77E21CD00F70F /* Pods_GeekFit_GeekFitUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19C9494F24E8B87263D99EB8 /* Pods_GeekFit_GeekFitUITests.framework */; };
 		1AD7A9A6799AF2B8015C6EA2 /* Pods_GeekFit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D02C24A8F2D26CF698720FE /* Pods_GeekFit.framework */; };
 		85512C9759AF7DB29782158E /* Pods_GeekFitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3DB7F2B0CD50DB4A6AA8627 /* Pods_GeekFitTests.framework */; };
@@ -50,11 +59,17 @@
 /* Begin PBXFileReference section */
 		070685912503CC33002A0A82 /* TrackService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackService.swift; sourceTree = "<group>"; };
 		070685952503DC36002A0A82 /* WorkoutListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutListViewController.swift; sourceTree = "<group>"; };
+		0706E860250542C600CA9DD8 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
+		0706E8622505450500CA9DD8 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
+		0706E8642505454800CA9DD8 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		071ED84325012FD5008FB556 /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
 		071ED84625013009008FB556 /* Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
 		071ED84825013020008FB556 /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
 		0724D66F2504FB1600A4C33B /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
-		0724D6712505051F00A4C33B /* MapViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MapViewController+Ext.swift"; sourceTree = "<group>"; };
+		0793033F2509201300981E31 /* EndWorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndWorkoutViewController.swift; sourceTree = "<group>"; };
+		079529812506811700EF63F8 /* Users.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Users.storyboard; sourceTree = "<group>"; };
+		079529842506818300EF63F8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		07952986250683EC00EF63F8 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		079AEDDD24FB64B90038C2B0 /* GeekFit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeekFit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		079AEDE024FB64B90038C2B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		079AEDE224FB64B90038C2B0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,7 +86,10 @@
 		079AEE0424FB64BE0038C2B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07B4EB862503C0FB000AF8BE /* WorkoutService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutService.swift; sourceTree = "<group>"; };
 		07B4EB882503C117000AF8BE /* LocationServiceProto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServiceProto.swift; sourceTree = "<group>"; };
+		07C39EAA2507B12100ABBC23 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		07C39EAD2507B2A800ABBC23 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		07DC955224FBBFC1007923D3 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
+		07E2761D25069B65003ADBDD /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		197AD39FE82E8BCFC65BCC93 /* Pods-GeekFit-GeekFitUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeekFit-GeekFitUITests.debug.xcconfig"; path = "Target Support Files/Pods-GeekFit-GeekFitUITests/Pods-GeekFit-GeekFitUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		19C9494F24E8B87263D99EB8 /* Pods_GeekFit_GeekFitUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GeekFit_GeekFitUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D02C24A8F2D26CF698720FE /* Pods_GeekFit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GeekFit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,21 +129,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		070685932503DC17002A0A82 /* MapView */ = {
+		070685932503DC17002A0A82 /* Workouts */ = {
 			isa = PBXGroup;
 			children = (
+				079AEDE624FB64B90038C2B0 /* Main.storyboard */,
 				079AEDE424FB64B90038C2B0 /* MapViewController.swift */,
-				0724D6712505051F00A4C33B /* MapViewController+Ext.swift */,
+				070685952503DC36002A0A82 /* WorkoutListViewController.swift */,
+				0793033F2509201300981E31 /* EndWorkoutViewController.swift */,
 			);
-			path = MapView;
+			path = Workouts;
 			sourceTree = "<group>";
 		};
-		070685942503DC1F002A0A82 /* WorkoutList */ = {
+		0706E85F250542A900CA9DD8 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
-				070685952503DC36002A0A82 /* WorkoutListViewController.swift */,
+				0706E860250542C600CA9DD8 /* BaseCoordinator.swift */,
+				07952986250683EC00EF63F8 /* LoginCoordinator.swift */,
+				0706E8642505454800CA9DD8 /* MainCoordinator.swift */,
+				0706E8622505450500CA9DD8 /* ApplicationCoordinator.swift */,
 			);
-			path = WorkoutList;
+			path = Navigation;
 			sourceTree = "<group>";
 		};
 		071ED84225012FC0008FB556 /* DB */ = {
@@ -145,12 +168,22 @@
 			path = Activity;
 			sourceTree = "<group>";
 		};
-		0724D66E2504FB0900A4C33B /* Services */ = {
+		0724D66E2504FB0900A4C33B /* Application */ = {
 			isa = PBXGroup;
 			children = (
 				0724D66F2504FB1600A4C33B /* AppManager.swift */,
 			);
-			path = Services;
+			path = Application;
+			sourceTree = "<group>";
+		};
+		079529832506817000EF63F8 /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				079529812506811700EF63F8 /* Users.storyboard */,
+				079529842506818300EF63F8 /* LoginViewController.swift */,
+				07E2761D25069B65003ADBDD /* RegisterViewController.swift */,
+			);
+			path = Users;
 			sourceTree = "<group>";
 		};
 		079AEDD424FB64B90038C2B0 = {
@@ -217,7 +250,6 @@
 			isa = PBXGroup;
 			children = (
 				079AEDE924FB64BD0038C2B0 /* Assets.xcassets */,
-				079AEDE624FB64B90038C2B0 /* Main.storyboard */,
 				079AEDEB24FB64BD0038C2B0 /* LaunchScreen.storyboard */,
 				079AEDEE24FB64BD0038C2B0 /* Info.plist */,
 			);
@@ -227,7 +259,7 @@
 		079AEE1324FB672E0038C2B0 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				0724D66E2504FB0900A4C33B /* Services */,
+				0724D66E2504FB0900A4C33B /* Application */,
 				07DC955124FBBFAF007923D3 /* Helpers */,
 				079AEDE024FB64B90038C2B0 /* AppDelegate.swift */,
 				079AEDE224FB64B90038C2B0 /* SceneDelegate.swift */,
@@ -238,8 +270,8 @@
 		079AEE1424FB67760038C2B0 /* Flows */ = {
 			isa = PBXGroup;
 			children = (
-				070685942503DC1F002A0A82 /* WorkoutList */,
-				070685932503DC17002A0A82 /* MapView */,
+				079529832506817000EF63F8 /* Users */,
+				070685932503DC17002A0A82 /* Workouts */,
 			);
 			path = Flows;
 			sourceTree = "<group>";
@@ -247,6 +279,7 @@
 		079AEE1524FB67870038C2B0 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				07C39EA92507B11000ABBC23 /* Profile */,
 				071ED84525012FED008FB556 /* Activity */,
 			);
 			path = Entity;
@@ -255,6 +288,8 @@
 		079AEE1624FB67900038C2B0 /* BussinessLogic */ = {
 			isa = PBXGroup;
 			children = (
+				07C39EAC2507B29A00ABBC23 /* Profile */,
+				0706E85F250542A900CA9DD8 /* Navigation */,
 				07B4EB852503C0EB000AF8BE /* Tracker */,
 				071ED84225012FC0008FB556 /* DB */,
 			);
@@ -264,11 +299,27 @@
 		07B4EB852503C0EB000AF8BE /* Tracker */ = {
 			isa = PBXGroup;
 			children = (
-				07B4EB862503C0FB000AF8BE /* WorkoutService.swift */,
 				070685912503CC33002A0A82 /* TrackService.swift */,
+				07B4EB862503C0FB000AF8BE /* WorkoutService.swift */,
 				07B4EB882503C117000AF8BE /* LocationServiceProto.swift */,
 			);
 			path = Tracker;
+			sourceTree = "<group>";
+		};
+		07C39EA92507B11000ABBC23 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				07C39EAA2507B12100ABBC23 /* User.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		07C39EAC2507B29A00ABBC23 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				07C39EAD2507B2A800ABBC23 /* UserService.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		07DC955124FBBFAF007923D3 /* Helpers */ = {
@@ -415,6 +466,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				079AEDED24FB64BD0038C2B0 /* LaunchScreen.storyboard in Resources */,
+				079529822506811700EF63F8 /* Users.storyboard in Resources */,
 				079AEDEA24FB64BD0038C2B0 /* Assets.xcassets in Resources */,
 				079AEDE824FB64B90038C2B0 /* Main.storyboard in Resources */,
 			);
@@ -597,15 +649,23 @@
 			files = (
 				071ED84925013020008FB556 /* Workout.swift in Sources */,
 				070685922503CC33002A0A82 /* TrackService.swift in Sources */,
+				079303402509201300981E31 /* EndWorkoutViewController.swift in Sources */,
 				070685962503DC36002A0A82 /* WorkoutListViewController.swift in Sources */,
 				0724D6702504FB1600A4C33B /* AppManager.swift in Sources */,
+				07E2761E25069B65003ADBDD /* RegisterViewController.swift in Sources */,
+				07C39EAB2507B12100ABBC23 /* User.swift in Sources */,
 				07B4EB872503C0FB000AF8BE /* WorkoutService.swift in Sources */,
+				0706E8632505450500CA9DD8 /* ApplicationCoordinator.swift in Sources */,
 				071ED84425012FD5008FB556 /* RealmService.swift in Sources */,
 				071ED84725013009008FB556 /* Path.swift in Sources */,
 				079AEDE524FB64B90038C2B0 /* MapViewController.swift in Sources */,
+				0706E8652505454800CA9DD8 /* MainCoordinator.swift in Sources */,
+				07C39EAE2507B2A800ABBC23 /* UserService.swift in Sources */,
 				079AEDE124FB64B90038C2B0 /* AppDelegate.swift in Sources */,
 				07DC955324FBBFC1007923D3 /* UIViewController+Ext.swift in Sources */,
-				0724D6722505051F00A4C33B /* MapViewController+Ext.swift in Sources */,
+				07952987250683EC00EF63F8 /* LoginCoordinator.swift in Sources */,
+				079529852506818300EF63F8 /* LoginViewController.swift in Sources */,
+				0706E861250542C600CA9DD8 /* BaseCoordinator.swift in Sources */,
 				079AEDE324FB64B90038C2B0 /* SceneDelegate.swift in Sources */,
 				07B4EB892503C117000AF8BE /* LocationServiceProto.swift in Sources */,
 			);
