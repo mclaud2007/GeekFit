@@ -9,18 +9,35 @@
 import Foundation
 import RealmSwift
 
-class WorkoutService: NSObject {
+final class WorkoutService: NSObject {
     private var realm = RealmService.shared
+    private var currentWorkout: Workout?
             
     func start() -> Workout? {
         let currentWorkout = Workout()
         try? realm.set(items: currentWorkout)
         
+        // Запомним текущую тренировку - она нам пригодится в конце для подсчета разных метрик
+        self.currentWorkout = currentWorkout
+        
         return currentWorkout
     }
     
-    func stop() {
-        
+    func stop(distance: Double?) {
+        // Посчитаем общее время тренировки в секундах
+        if let currentWorkout = currentWorkout {
+            let startTime = currentWorkout.timestamp.timeIntervalSince1970
+            let endTime = Date().timeIntervalSince1970
+            
+            // Сохраним изменения
+            try? realm.realm?.write {
+                currentWorkout.timeTotal = (endTime - startTime)
+                currentWorkout.pathLenght = distance ?? 0
+            }
+            
+            // Обнуляем текущую тренировку
+            self.currentWorkout = nil
+        }
     }
     
     func list() -> [Workout]? {

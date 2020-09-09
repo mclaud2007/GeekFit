@@ -8,15 +8,16 @@
 
 import Foundation
 import CoreLocation
+import GoogleMaps
 import RealmSwift
 
 protocol TrackServiceProto {
     func didUpdateTrackWith(error: Error)
 }
 
-class TrackService: NSObject {
+final class TrackService: NSObject {
     var delegate: TrackServiceProto?
-    let service = RealmService.shared
+    let realm = RealmService.shared
     
     func track(workout: Workout?, coordinate: CLLocationCoordinate2D?) {
         guard let workout = workout, let coordinate = coordinate else { return }
@@ -36,7 +37,7 @@ class TrackService: NSObject {
     }
     
     func listWith(workoutID: String) -> [Path]? {
-        guard let trackList = service.get(Path.self)?
+        guard let trackList = realm.get(Path.self)?
                                   .filter("activityID == '\(workoutID)'")
                                   .sorted(byKeyPath: "timestamp", ascending: true) else {
             
@@ -48,9 +49,13 @@ class TrackService: NSObject {
     }
     
     func removePathWith(workoutID: String) {
-        if let trackList = service.get(Path.self)?
+        if let trackList = realm.get(Path.self)?
                                   .filter("activityID == '\(workoutID)'") {
-            try? service.delete(items: trackList)
+            try? realm.delete(items: trackList)
         }
+    }
+    
+    func calculateDistanceFrom(first: CLLocationCoordinate2D, second: CLLocationCoordinate2D) -> Double {
+        return Double(GMSGeometryDistance(first, second))
     }
 }

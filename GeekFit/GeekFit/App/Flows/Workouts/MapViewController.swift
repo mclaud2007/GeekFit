@@ -8,9 +8,8 @@
 
 import UIKit
 import GoogleMaps
-import CoreLocation
-import RealmSwift
 
+@objc(MapViewController)
 class MapViewController: UIViewController {
     // MARK: Outlet
     @IBOutlet weak var mapView: GMSMapView! {
@@ -18,7 +17,6 @@ class MapViewController: UIViewController {
             mapView.delegate = self
             mapView.isTrafficEnabled = true
             mapView.isMyLocationEnabled = true
-            mapView.settings.compassButton = true
         }
     }
     
@@ -59,8 +57,14 @@ class MapViewController: UIViewController {
         }
     }
     
-    @IBOutlet weak var btnStartDetection: UIButton!
+    // Старт / стоп отслеживания
+    @IBOutlet weak var btnStartDetection: UIButton! {
+        didSet {
+            btnStartDetection.backgroundColor = .systemBlue
+        }
+    }
     
+    // КНопка отображеия текущего местоположения
     @IBOutlet weak var btnMyCurrentLocation: UIButton! {
         didSet {
             btnMyCurrentLocation.layer.cornerRadius = 5
@@ -73,6 +77,10 @@ class MapViewController: UIViewController {
     @IBOutlet weak var btnWorkoutList: UIButton!
     
     // MARK: Properties
+    var onWorkoutList: (() -> Void)?
+    var onWorkoutEnd: ((Double, Double) -> Void)?
+    var onLogout: (() -> Void)?
+    
     // Домашняя координата
     let coordinate = CLLocationCoordinate2D(latitude: 55.79622385766241, longitude: 37.53777835518122)
     
@@ -83,7 +91,6 @@ class MapViewController: UIViewController {
     var currentWorkout: Workout?
         
     // Различные маркеры
-    var marker: GMSMarker?
     let infoMarker = GMSMarker()
     
     //  Текущий уровень зума на карте
@@ -112,6 +119,8 @@ class MapViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        title = "Карта"
        
         // Делегат сервиса отслеживания положения
         locationManager.delegate = self
@@ -124,7 +133,7 @@ class MapViewController: UIViewController {
     }
     
     // Настройка карты
-    func configureMap() {
+    private func configureMap() {
         let camera = GMSCameraPosition.init(target: coordinate, zoom: currentZoomLevel)
     
         mapView.camera = camera
@@ -137,7 +146,7 @@ class MapViewController: UIViewController {
     }
     
     // Настрока отображения пути
-    func configureRoutePath() {
+    private func configureRoutePath() {
         // Удалим старую линию с карты
         route?.map = nil
         routePath = nil
@@ -150,7 +159,7 @@ class MapViewController: UIViewController {
         
     }
     
-    func loadPathFromWorkoutWith(activityID: String) {
+    private func loadPathFromWorkoutWith(activityID: String) {
         guard let paths = trackerManager.listWith(workoutID: activityID), !paths.isEmpty else { return }
         guard let firstCoordinate = paths.first else { return }
         
@@ -169,6 +178,25 @@ class MapViewController: UIViewController {
         paths.forEach { path in
             routePath?.add(CLLocationCoordinate2D(latitude: path.latitude, longitude: path.longitude))
             route?.path = routePath
+        }
+    }
+        
+    func onWorkoutSelect(_ activityID: String) {
+        loadPathFromWorkoutWith(activityID: activityID)
+    }
+    
+    func onWorkoutDelete(_ activityID: String) {
+        // Если удаляемая тренировка - текущая надо очистить и карту
+        if currentWorkout?.activityID == activityID {
+            configureRoutePath()
+            currentWorkout = nil
+        }
+        
+        // Удаляем тренировку и путь
+        if workoutManager.removeWith(workoutID: activityID) {
+            // Удаляем путь из тренировки
+            trackerManager.removePathWith(workoutID: activityID)
+            workoutCount -= 1
         }
     }
 
@@ -221,19 +249,21 @@ class MapViewController: UIViewController {
 
     }
     
-    @IBAction func btnAddMarkerClicked(_ sender: Any) {
-        if marker == nil {
-            marker = GMSMarker(position: coordinate)
-            marker?.title = "Test"
-            marker?.snippet = "Some description"
-            marker?.map = mapView
-            marker?.icon = GMSMarker.markerImage(with: .green)
-            mapView.animate(toLocation: coordinate)
-            
-        } else {
-            marker?.map = nil
-            marker = nil
+    @IBAction func btnExitClicked(_ sender: Any) {
+        UserDefaults.standard.set(false, forKey: "isLogin")
+        
+        // Создаем окно с вопросом дейтсвительно ли пользователь желает выйти
+        let actionVC = UIAlertController(title: "Выход", message: "Вы уверены, что хотите выйти?", preferredStyle: .alert)
+        let actionOK = UIAlertAction(title: "Да", style: .default) { [weak self] _ in
+            self?.onLogout?()
         }
+        
+        let actionCancel = UIAlertAction(title: "Нет", style: .cancel, handler: nil)
+        
+        actionVC.addAction(actionOK)
+        actionVC.addAction(actionCancel)
+        
+        present(actionVC, animated: true)
     }
     
     @IBAction func btnMyCurrentLocationClicked(_ sender: Any) {
@@ -263,6 +293,17 @@ class MapViewController: UIViewController {
             workoutCount += 1
             
         } else {
+            var totalDistance: Double?
+            
+            if let lastLocation = locationManager.lastKnownLocation,
+                let firstLocation = locationManager.firstKnownLocation {
+                totalDistance = trackerManager.calculateDistanceFrom(first: firstLocation, second: lastLocation)
+            }
+            
+            // Останавливаем тренировку
+            workoutManager.stop(distance: totalDistance)
+            
+            // Останавливаем отслеживаение
             locationManager.stop()
             
         }
@@ -274,37 +315,13 @@ class MapViewController: UIViewController {
             return
         }
         
-        // Инициализируем окно со списком тренировок
-        guard let destination = AppManager.shared
-                                          .getScreenPage(storyboard: "Main", identifier: "workoutListController")
-                                                as? WorkoutListViewController else {
+        guard locationManager.isUpdateLocationStarted == false else {
+            showErrorMessage(message: "Тренировка запущена. Для просмотра списка её необходимо остановить.")
             return
         }
         
-        // Загрузка выбранной тренировки
-        destination.didWorkoutSelect = { [weak self] activityID in
-            self?.loadPathFromWorkoutWith(activityID: activityID)
-        }
-        
-        // Удаление выбранной тренировки
-        destination.didWorkoutDelete = { [weak self] activityID in
-            guard let self = self else { return }
-            
-            // Если удаляемая тренировка - текущая надо очистить и карту
-            if self.currentWorkout?.activityID == activityID {
-                self.configureRoutePath()
-                self.currentWorkout = nil
-            }
-            
-            // Удаляем тренировку и путь
-            if self.workoutManager.removeWith(workoutID: activityID) {
-                // Удаляем путь из тренировки
-                self.trackerManager.removePathWith(workoutID: activityID)
-                self.workoutCount -= 1
-            }
-        }
-        
-        navigationController?.present(destination, animated: true)        
+        // Переход к окну со списком тренировок
+        onWorkoutList?()
     }
 }
 
@@ -321,6 +338,9 @@ extension MapViewController: LocationServiceProto {
     func willUpdateLocationStopped() {
         btnStartDetection.setTitle("Отслеживать", for: .normal)
         btnStartDetection.backgroundColor = .systemBlue
+        
+        // открываем экран отчета о тренировке
+        onWorkoutEnd?(currentWorkout?.timeTotal ?? 0, currentWorkout?.pathLenght ?? 0)
     }
     
     func didLocationChanged(_ manager: CLLocationManager, coordinate: CLLocationCoordinate2D?) {
@@ -338,4 +358,17 @@ extension MapViewController: LocationServiceProto {
     }
     
     func didUpdateIsInactive(_ manager: CLLocationManager, coordinate: CLLocationCoordinate2D?) { }
+}
+
+// MARK: GMSMApViewDelegate
+extension MapViewController: GMSMapViewDelegate {
+    func mapView(_ mapView: GMSMapView, didTapPOIWithPlaceID placeID: String, name: String, location: CLLocationCoordinate2D) {
+        infoMarker.snippet = "Долгота: \(location.latitude),\nширота: \(location.longitude)"
+        infoMarker.position = location
+        infoMarker.title = name
+        infoMarker.opacity = 0
+        infoMarker.infoWindowAnchor.y = 0.4
+        infoMarker.map = mapView
+        mapView.selectedMarker = infoMarker
+    }
 }

@@ -8,6 +8,7 @@
 
 import UIKit
 
+@objc(WorkoutListViewController)
 class WorkoutListViewController: UIViewController {
     @IBOutlet weak var workoutTable: UITableView! {
         didSet {
@@ -21,6 +22,7 @@ class WorkoutListViewController: UIViewController {
     
     var didWorkoutSelect: ((String) -> Void)?
     var didWorkoutDelete: ((String) -> Void)?
+    
     var dateFormatter = DateFormatter()
     
     override func viewDidLoad() {
@@ -56,7 +58,7 @@ extension WorkoutListViewController: UITableViewDelegate {
                 workoutTable.reloadData()
                 
                 // Запускаем замыкание на удаление данных
-                didWorkoutDelete?(workout.activityID)                
+                didWorkoutDelete?(workout.activityID)
                 
             }
         }
