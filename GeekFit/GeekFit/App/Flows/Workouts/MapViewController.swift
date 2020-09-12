@@ -140,7 +140,7 @@ class MapViewController: UIViewController {
         mapView.mapType = .hybrid
         
         // Трафик вкл / выкл
-        btnTrafficOnOff.setImage(UIImage(systemName: (mapView.isTrafficEnabled == true ? "car.fill" : "car")),
+        btnTrafficOnOff.setImage(UIImage(named: (mapView.isTrafficEnabled == true ? "car.fill" : "car")),
                                  for: .normal
         )
     }
@@ -243,10 +243,10 @@ class MapViewController: UIViewController {
     
     @IBAction func trafficOnOffClicked(_ sender: Any) {
         mapView.isTrafficEnabled = !mapView.isTrafficEnabled
-        btnTrafficOnOff.setImage(UIImage(systemName: (mapView.isTrafficEnabled == true ? "car.fill" : "car")),
+        
+        btnTrafficOnOff.setImage(UIImage(named: (mapView.isTrafficEnabled == true ? "car.fill" : "car")),
                                  for: .normal
         )        
-
     }
     
     @IBAction func btnExitClicked(_ sender: Any) {
