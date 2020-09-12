@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -10,7 +11,7 @@
         <!--End Workout View Controller-->
         <scene sceneID="dCb-r8-jHW">
             <objects>
-                <viewController storyboardIdentifier="EndWorkoutViewController" id="i0J-GN-bR3" customClass="EndWorkoutViewController" customModule="GeekFit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EndWorkoutViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="i0J-GN-bR3" customClass="EndWorkoutViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KX7-BL-HcH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -93,7 +94,7 @@
         <!--Map View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="MapViewController" id="BYZ-38-t0r" customClass="MapViewController" customModule="GeekFit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MapViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="MapViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -110,7 +111,7 @@
                                     <constraint firstAttribute="height" constant="40" id="yn4-Ts-zNn"/>
                                 </constraints>
                                 <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" image="location" catalog="system"/>
+                                <state key="normal" image="location"/>
                                 <connections>
                                     <action selector="btnMyCurrentLocationClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sHe-Of-iqB"/>
                                 </connections>
@@ -123,7 +124,7 @@
                                     <constraint firstAttribute="height" constant="40" id="Dhe-gi-Z3D"/>
                                 </constraints>
                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" image="car" catalog="system"/>
+                                <state key="normal" image="car.fill"/>
                                 <connections>
                                     <action selector="trafficOnOffClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LZL-gP-WpU"/>
                                 </connections>
@@ -136,7 +137,7 @@
                                     <constraint firstAttribute="height" constant="40" id="u1d-dM-mOW"/>
                                 </constraints>
                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" image="plus" catalog="system"/>
+                                <state key="normal" image="plus"/>
                                 <connections>
                                     <action selector="zoomInClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kau-3r-Vhm"/>
                                 </connections>
@@ -149,7 +150,7 @@
                                     <constraint firstAttribute="height" constant="40" id="KPc-nb-Jgg"/>
                                 </constraints>
                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" image="minus" catalog="system"/>
+                                <state key="normal" image="minus"/>
                                 <connections>
                                     <action selector="zoomOutClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jlp-iO-NwF"/>
                                 </connections>
@@ -179,7 +180,7 @@
                                 <rect key="frame" x="277" y="781" width="69.5" height="30"/>
                                 <color key="backgroundColor" red="0.20000000000000001" green="0.40000000000000002" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" image="list.bullet" catalog="system"/>
+                                <state key="normal" image="list.bullet"/>
                                 <connections>
                                     <action selector="btnWorkoutListClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CM1-QS-sUm"/>
                                 </connections>
@@ -212,13 +213,13 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="g8j-cy-2dY">
-                        <barButtonItem key="leftBarButtonItem" image="chevron.left" catalog="system" id="y0V-BV-a1c" userLabel="btnExit">
+                        <barButtonItem key="leftBarButtonItem" image="chevron.left" id="y0V-BV-a1c" userLabel="btnExit">
                             <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="btnExitClicked:" destination="BYZ-38-t0r" id="oMe-Qd-0Gl"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Доиой" image="house" catalog="system" id="fMX-hD-IjS" userLabel="btnHome">
+                        <barButtonItem key="rightBarButtonItem" title="Доиой" image="house" id="fMX-hD-IjS" userLabel="btnHome">
                             <connections>
                                 <action selector="goHome:" destination="BYZ-38-t0r" id="hqi-xg-1pv"/>
                             </connections>
@@ -242,7 +243,7 @@
         <!--Workout List View Controller-->
         <scene sceneID="Dzy-1p-7rD">
             <objects>
-                <viewController storyboardIdentifier="WorkoutListViewController" id="3vi-QU-QzK" customClass="WorkoutListViewController" customModule="GeekFit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WorkoutListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3vi-QU-QzK" customClass="WorkoutListViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fqH-58-rvU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -318,12 +319,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="car" catalog="system" width="128" height="93"/>
-        <image name="chevron.left" catalog="system" width="96" height="128"/>
-        <image name="house" catalog="system" width="128" height="110"/>
-        <image name="list.bullet" catalog="system" width="128" height="88"/>
-        <image name="location" catalog="system" width="128" height="115"/>
-        <image name="minus" catalog="system" width="128" height="24"/>
-        <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="car.fill" width="18" height="18"/>
+        <image name="chevron.left" width="18" height="18"/>
+        <image name="house" width="18" height="18"/>
+        <image name="list.bullet" width="18" height="18"/>
+        <image name="location" width="18" height="18"/>
+        <image name="minus" width="18" height="18"/>
+        <image name="plus" width="18" height="18"/>
     </resources>
 </document>

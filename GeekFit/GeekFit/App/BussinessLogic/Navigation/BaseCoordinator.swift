@@ -35,6 +35,15 @@ class BaseCoordinator {
         }
     }
     
+    func getRootViewController() -> UIViewController? {
+        if #available(iOS 13, *) {
+            let scenedelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate
+            return scenedelegate?.window?.rootViewController
+        } else {
+            return UIApplication.shared.keyWindow?.rootViewController
+        }
+    }
+    
     func setAsRoot(_ controller: UIViewController) {
         if #available(iOS 13, *) {
             let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate
