@@ -1,0 +1,23 @@
+warning_threshold: 15
+
+excluded:
+  - Pods
+  - GeekFitUITests
+  - GeekFitUiTests
+
+disabled_rules:
+  - trailing_whitespace
+  - empty_enum_arguments
+
+opt_in_rules:
+  - empty_count
+
+line_length: 150
+
+file_length:
+  warning: 500
+  error: 600
+
+type_body_length:
+  warning: 400
+  error: 450
