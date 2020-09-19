@@ -4,7 +4,7 @@
 //
 //  Created by Григорий Мартюшин on 30.08.2020.
 //  Copyright © 2020 Григорий Мартюшин. All rights reserved.
-//
+// swiftlint:disable redundant_discardable_let
 
 import UIKit
 import GoogleMaps
@@ -117,19 +117,67 @@ class MapViewController: UIViewController {
         }
     }
     
+    // Тип отображния карты
+    private(set) var selectedMapType: OwnObservable<Int> = OwnObservable(1)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         title = "Карта"
-       
-        // Делегат сервиса отслеживания положения
-        locationManager.delegate = self
         
         // Попробуем посчитать количество записанных тренировок
         workoutCount = workoutManager.count()
         
         // Настриваем карту
         configureMap()
+        
+        // Настраиваем отслеживание изменение пути
+        configureLocationChanged()
+        
+        // Настройка типа отображения карты
+        configureMapTypeChanged()
+        
+        // Подписываемся на изменение состояния locationService
+        configureLocationServiceStatus()
+    }
+    
+    // Подписываемся на изменения segmentedControll
+    private func configureMapTypeChanged() {
+        selectedMapType.addObservers(self, options: [.new, .initial]) { [weak self] (value, _) in
+            switch value {
+            case 0:
+                self?.mapView.mapType = .normal
+            case 1:
+                self?.mapView.mapType = .hybrid
+            case 2:
+                self?.mapView.mapType = .satellite
+            case 3:
+                self?.mapView.mapType = .terrain
+            default:
+                self?.mapView.mapType = .hybrid
+            }
+        }
+    }
+    
+    // Подписываемся на изменения состояния работы локейшен сервиса
+    private func configureLocationServiceStatus() {
+        locationManager.isUpdateLocationStarted.addObservers(self, options: [.new]) { [weak self] (value, _) in
+            guard let self = self else { return }
+            
+            if value == true {
+                self.btnStartDetection.setTitle("Остановить отслеживание", for: .normal)
+                self.btnStartDetection.backgroundColor = .systemGreen
+                
+                // обновим отрисовку пути
+                self.configureRoutePath()
+            } else if value == false {
+                self.btnStartDetection.setTitle("Отслеживать", for: .normal)
+                self.btnStartDetection.backgroundColor = .systemBlue
+        
+                // открываем экран отчета о тренировке
+                self.onWorkoutEnd?(self.currentWorkout?.timeTotal ?? 0, self.currentWorkout?.pathLenght ?? 0)
+            }
+        }
     }
     
     // Настройка карты
@@ -157,6 +205,23 @@ class MapViewController: UIViewController {
         
         routePath = GMSMutablePath()
         
+    }
+    
+    // Настройка отслеживания обновления текущей позиции пользователя
+    private func configureLocationChanged() {
+        let _ = locationManager.currentObservableLoction.asObservable().bind { [weak self] (coordinate) in
+            guard let coordinate = coordinate else { return }
+            
+            // Перемещаем камеру в новую координату
+            self?.mapView.animate(toLocation: coordinate)
+            
+            // Добавляем координаты в путь
+            self?.routePath?.add(coordinate)
+            self?.route?.path = self?.routePath
+            
+            // Сохраняем в рилм
+            self?.trackerManager.track(workout: self?.currentWorkout, coordinate: coordinate)
+        }
     }
     
     private func loadPathFromWorkoutWith(activityID: String) {
@@ -205,20 +270,7 @@ class MapViewController: UIViewController {
     }
     
     @IBAction func mapTypeChanged(_ sender: Any) {
-        if let segmented = sender as? UISegmentedControl {
-            switch segmented.selectedSegmentIndex {
-            case 0:
-                mapView.mapType = .normal
-            case 1:
-                mapView.mapType = .hybrid
-            case 2:
-                mapView.mapType = .satellite
-            case 3:
-                mapView.mapType = .terrain
-            default:
-                mapView.mapType = .hybrid
-            }
-        }
+        selectedMapType.value = mapType.selectedSegmentIndex
     }
     
     @IBAction func zoomInClicked(_ sender: Any) {
@@ -282,7 +334,7 @@ class MapViewController: UIViewController {
             return
         }
         
-        if locationManager.isUpdateLocationStarted == false {
+        if locationManager.isUpdateLocationStarted.value == false {
             // Стартуем новую тренировку
             currentWorkout = workoutManager.start()
             
@@ -315,7 +367,7 @@ class MapViewController: UIViewController {
             return
         }
         
-        guard locationManager.isUpdateLocationStarted == false else {
+        guard locationManager.isUpdateLocationStarted.value == false else {
             showErrorMessage(message: "Тренировка запущена. Для просмотра списка её необходимо остановить.")
             return
         }
@@ -323,41 +375,6 @@ class MapViewController: UIViewController {
         // Переход к окну со списком тренировок
         onWorkoutList?()
     }
-}
-
-// MARK: BackgroundServiceProto
-extension MapViewController: LocationServiceProto {
-    func willUpdateLocationStarted() {
-        btnStartDetection.setTitle("Остановить отслеживание", for: .normal)
-        btnStartDetection.backgroundColor = .systemGreen
-        
-        // обновим отрисовку пути
-        configureRoutePath()
-    }
-    
-    func willUpdateLocationStopped() {
-        btnStartDetection.setTitle("Отслеживать", for: .normal)
-        btnStartDetection.backgroundColor = .systemBlue
-        
-        // открываем экран отчета о тренировке
-        onWorkoutEnd?(currentWorkout?.timeTotal ?? 0, currentWorkout?.pathLenght ?? 0)
-    }
-    
-    func didLocationChanged(_ manager: CLLocationManager, coordinate: CLLocationCoordinate2D?) {
-        guard let coordinate = coordinate else { return }
-        
-        // Перемещаем камеру в новую координату
-        mapView.animate(toLocation: coordinate)
-              
-        // Добавляем координаты в путь
-        routePath?.add(coordinate)
-        route?.path = routePath
-        
-        // Сохраняем в рилм
-        trackerManager.track(workout: currentWorkout, coordinate: coordinate)
-    }
-    
-    func didUpdateIsInactive(_ manager: CLLocationManager, coordinate: CLLocationCoordinate2D?) { }
 }
 
 // MARK: GMSMApViewDelegate
