@@ -4,9 +4,11 @@
 //
 //  Created by Григорий Мартюшин on 07.09.2020.
 //  Copyright © 2020 Григорий Мартюшин. All rights reserved.
-//
+// swiftlint:disable redundant_discardable_let
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 @objc(RegisterViewController)
 class RegisterViewController: UIViewController {
@@ -25,6 +27,11 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var txtNewPassword: UITextField!
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtName: UITextField!
+    @IBOutlet weak var btnRegister: UIButton! {
+        didSet {
+            btnRegister.isEnabled = false
+        }
+    }
     
     let service = UserService.shared
     var onRegistrationDone: (() -> Void)?
@@ -39,6 +46,19 @@ class RegisterViewController: UIViewController {
         // Убираем клавиатуру по клику на форму
         let touchGuesture = UITapGestureRecognizer(target: self, action: #selector(onViewClick))
         self.view.addGestureRecognizer(touchGuesture)
+        
+        // При првильно заполненых полях кнопка "Зарегистрироваться" становится активной
+        configureBtnRegisterClicked()
+    }
+    
+    private func configureBtnRegisterClicked() {
+        let _ = Observable.combineLatest(txtLogin.rx.text, txtName.rx.text, txtEmail.rx.text,
+                                         txtPassword.rx.text, txtNewPassword.rx.text).map { (login, name, email, password, newPassword) in
+                                            return (!(login ?? "").isEmpty && !(name ?? "").isEmpty && !(email ?? "").isEmpty &&
+                                                    !(password ?? "").isEmpty && !(newPassword ?? "").isEmpty && password == newPassword)
+        }.bind { [weak btnRegister] fieldFillCorrect in
+            btnRegister?.isEnabled = fieldFillCorrect
+        }
     }
     
     @objc

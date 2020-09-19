@@ -4,9 +4,11 @@
 //
 //  Created by Григорий Мартюшин on 07.09.2020.
 //  Copyright © 2020 Григорий Мартюшин. All rights reserved.
-//
+// swiftlint:disable redundant_discardable_let
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 @objc(LoginViewController)
 class LoginViewController: UIViewController {
@@ -22,6 +24,11 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var txtLogin: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
+    @IBOutlet weak var btnEnter: UIButton! {
+        didSet {
+            btnEnter.isEnabled = false
+        }
+    }
     
     var onLogin: (() -> Void)?
     var onRegister: (() -> Void)?
@@ -37,6 +44,21 @@ class LoginViewController: UIViewController {
         // Убираем клавиатуру по клику на форму
         let touchGuesture = UITapGestureRecognizer(target: self, action: #selector(onViewClick))
         self.view.addGestureRecognizer(touchGuesture)
+        
+        // Включаем наблюдение за заполненностью полей логин/пароль
+        configureButtonEnterClicked()
+    }
+    
+    // Настройка наблюдения за полями логин/пароль
+    private func configureButtonEnterClicked() {
+        let _ = Observable
+            .combineLatest(txtLogin.rx.text, txtPassword.rx.text)
+            .map { (login, password) in
+                return (!(login ?? "").isEmpty && (password ?? "").count >= 4)
+        }
+        .bind { [weak btnEnter] fieldNotEmpty in
+            btnEnter?.isEnabled = fieldNotEmpty
+        }
     }
     
     @objc

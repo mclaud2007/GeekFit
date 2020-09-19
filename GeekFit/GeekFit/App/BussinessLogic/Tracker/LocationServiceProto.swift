@@ -9,21 +9,12 @@
 import Foundation
 import UIKit
 import CoreLocation
-
-protocol LocationServiceProto {
-    func willUpdateLocationStarted()
-    func willUpdateLocationStopped()
-    func didLocationChanged(_ manager: CLLocationManager, coordinate: CLLocationCoordinate2D?)
-    func didUpdateIsInactive(_ manager: CLLocationManager, coordinate: CLLocationCoordinate2D?)
-}
+import RxSwift
 
 final class LocationService: NSObject {
     static let shared = LocationService()
     private(set) var locationManager: CLLocationManager?
-    
-    // Делегат сервиса
-    var delegate: LocationServiceProto?
-    
+      
     // Заприщена ли проверка обновлений локации
     var isUpdateLocationRestricted: Bool {
         if CLLocationManager.locationServicesEnabled() {
@@ -39,13 +30,16 @@ final class LocationService: NSObject {
     }
     
     // Запущено ли отслеживание координат
-    private(set) var isUpdateLocationStarted: Bool = false
+    private(set) var isUpdateLocationStarted: OwnObservable<Bool> = OwnObservable(false)
     
     // Последняя известная нам координата
     private(set) var lastKnownLocation: CLLocationCoordinate2D?
     
     // Первая извесная нам координата - для расчета расстояния
     private(set) var firstKnownLocation: CLLocationCoordinate2D?
+    
+    // Позиция за которой мы будем наблюдать
+    private(set) var currentObservableLoction: Variable<CLLocationCoordinate2D?> = Variable(nil)
     
     override init() {
         super.init()
@@ -65,9 +59,9 @@ final class LocationService: NSObject {
         firstKnownLocation = nil
         lastKnownLocation = nil
         
-        isUpdateLocationStarted = true
+        // Запустим обновление позиции пользователя
+        isUpdateLocationStarted.value = true
         locationManager?.startUpdatingLocation()
-        delegate?.willUpdateLocationStarted()
     }
     
     // Остановка обновления позиции
@@ -75,9 +69,9 @@ final class LocationService: NSObject {
         firstKnownLocation = nil
         lastKnownLocation = nil
         
-        isUpdateLocationStarted = false
+        // Остановим обновление позиции пользователя
+        isUpdateLocationStarted.value = false
         locationManager?.stopUpdatingLocation()
-        delegate?.willUpdateLocationStopped()
     }
     
     // Проверим фоновую активность
@@ -89,6 +83,7 @@ final class LocationService: NSObject {
         
         // Сохраним последнее известное положение
         lastKnownLocation = coordinate
+        currentObservableLoction.value = coordinate
         
         // Если нет координаты - значит она будет первой
         if firstKnownLocation == nil {
@@ -105,11 +100,7 @@ final class LocationService: NSObject {
 extension LocationService: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         // Проверим активность, в случае необходимости напомним пользователю об отключении тренировки
-        stillActive(coordinate: locations.last?.coordinate)
-        
-        // Дернем делегат на тему новой координаты
-        delegate?.didLocationChanged(manager, coordinate: locations.last?.coordinate)
-        
+        stillActive(coordinate: locations.last?.coordinate)        
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {

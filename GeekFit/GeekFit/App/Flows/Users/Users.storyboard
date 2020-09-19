@@ -70,6 +70,7 @@
                         <viewLayoutGuide key="safeArea" id="2MC-Q3-EWS"/>
                     </view>
                     <connections>
+                        <outlet property="btnEnter" destination="V54-ic-IuX" id="bV5-bx-1Dl"/>
                         <outlet property="lblErrorMessage" destination="hoo-LG-12B" id="Sj5-dQ-zfs"/>
                         <outlet property="txtLogin" destination="FCx-yK-eKR" id="dOG-md-XrX"/>
                         <outlet property="txtPassword" destination="3Gv-o1-rU1" id="nqB-20-jwz"/>
@@ -183,6 +184,7 @@
                         <viewLayoutGuide key="safeArea" id="nt4-Ff-XaT"/>
                     </view>
                     <connections>
+                        <outlet property="btnRegister" destination="tPb-Jl-kG7" id="Jzf-dh-4rH"/>
                         <outlet property="lblErrorMessage" destination="BJZ-t0-584" id="SJ2-lN-Kpi"/>
                         <outlet property="txtEmail" destination="eBt-gn-Tk1" id="PgX-MD-Xgn"/>
                         <outlet property="txtLogin" destination="2qK-gr-RGh" id="b7T-vL-Gju"/>
