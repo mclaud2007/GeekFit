@@ -20,7 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         GMSServices.provideAPIKey("AIzaSyCrYGvnoqcy0b5zArPhVeOyOnhdsofsMKQ")
         
-        if #available(iOS 12, *) {
+        if #available(iOS 13, *) {
+        } else {
             window = UIWindow()
             window?.makeKeyAndVisible()
             
