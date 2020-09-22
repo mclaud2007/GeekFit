@@ -8,8 +8,8 @@ target 'GeekFit' do
   # Pods for GeekFit
   pod 'GoogleMaps'
   pod 'RealmSwift'
-  pod 'RxSwift', '~> 5'
-  pod 'RxCocoa', '~> 5'
+  pod 'RxSwift'
+  pod 'RxCocoa'
 
   target 'GeekFitTests' do
     inherit! :search_paths
