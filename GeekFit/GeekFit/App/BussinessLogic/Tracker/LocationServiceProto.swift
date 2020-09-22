@@ -4,12 +4,10 @@
 //
 //  Created by Григорий Мартюшин on 05.09.2020.
 //  Copyright © 2020 Григорий Мартюшин. All rights reserved.
-// swiftlint:disable weak_delegate
 
 import Foundation
 import UIKit
 import CoreLocation
-import RxSwift
 
 final class LocationService: NSObject {
     static let shared = LocationService()
@@ -39,7 +37,7 @@ final class LocationService: NSObject {
     private(set) var firstKnownLocation: CLLocationCoordinate2D?
     
     // Позиция за которой мы будем наблюдать
-    private(set) var currentObservableLoction: Variable<CLLocationCoordinate2D?> = Variable(nil)
+    private(set) var currentObservableLoction: OwnObservable<CLLocationCoordinate2D?> = OwnObservable(nil)
     
     override init() {
         super.init()

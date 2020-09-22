@@ -12,6 +12,7 @@ final class AppManager {
     static let shared = AppManager()
     
     var coordinator: BaseCoordinator?
+    var center = UNUserNotificationCenter.current()
     
     var blurView: UIView? {
         let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.extraLight)
@@ -43,9 +44,30 @@ final class AppManager {
         return true
     }
     
+    // Получено ли разрешение на нотификацию
+    var isNotificationGranted: Bool = false
+    
     enum StoryBoardName: String {
         case main = "Main"
         case users = "Users"
+    }
+    
+    init() {
+        // Запрашиваем разрешение на отправку сообщений
+        center.getNotificationSettings { [weak self] settings in
+            guard let self = self else { return }
+            
+            switch settings.authorizationStatus {
+            case .authorized, .ephemeral, .provisional:
+                self.isNotificationGranted = true
+                
+            default:
+                self.center.requestAuthorization(options: [.alert, .badge, .sound]) { [weak self] (granted, _) in
+                    guard let self = self else { return }
+                    self.isNotificationGranted = granted
+                }
+            }
+        }
     }
     
     func start() {

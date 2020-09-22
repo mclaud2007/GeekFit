@@ -50,6 +50,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Переход приложения в неактивное состояние
     func applicationWillResignActive(_ application: UIApplication) {
         appManager.didShowBlurWhenInnactive()
+        
+        // Отправляем сообщение
+        let notify = Notification()
+        notify.send(title: "Пора вставать", subtitle: "7 утра", content: "Пора вершить великие дела")
     }
     
     @available(iOS 12.0, *)

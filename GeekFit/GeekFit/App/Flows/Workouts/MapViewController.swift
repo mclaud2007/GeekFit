@@ -209,7 +209,7 @@ class MapViewController: UIViewController {
     
     // Настройка отслеживания обновления текущей позиции пользователя
     private func configureLocationChanged() {
-        let _ = locationManager.currentObservableLoction.asObservable().bind { [weak self] (coordinate) in
+        let _ = locationManager.currentObservableLoction.addObservers(self, options: [.new]) { [weak self] (coordinate, _) in
             guard let coordinate = coordinate else { return }
             
             // Перемещаем камеру в новую координату

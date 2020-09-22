@@ -40,6 +40,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func sceneWillResignActive(_ scene: UIScene) {
         appManager.didShowBlurWhenInnactive()
+        
+        // Отправляем сообщение
+        let notify = Notification()
+        notify.send(title: "Пора вставать", subtitle: "7 утра", content: "Пора вершить великие дела")
     }
 
     func sceneWillEnterForeground(_ scene: UIScene) {

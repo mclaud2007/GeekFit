@@ -19,8 +19,8 @@ PODS:
 DEPENDENCIES:
   - GoogleMaps
   - RealmSwift
-  - RxCocoa (~> 5)
-  - RxSwift (~> 5)
+  - RxCocoa
+  - RxSwift
 
 SPEC REPOS:
   trunk:
@@ -39,6 +39,6 @@ SPEC CHECKSUMS:
   RxRelay: d77f7d771495f43c556cbc43eebd1bb54d01e8e9
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
 
-PODFILE CHECKSUM: ed51fa60b975f635668729bf9e2182c81f491082
+PODFILE CHECKSUM: 5b49297addf380e6bf83e5fdbda968643840b435
 
 COCOAPODS: 1.8.4

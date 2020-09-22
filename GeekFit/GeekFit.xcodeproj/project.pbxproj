@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		04770DD12FB54E5AE1B6B125 /* Pods_GeekFit_GeekFitUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 903E13376445A6424BAE5F71 /* Pods_GeekFit_GeekFitUITests.framework */; };
 		070685922503CC33002A0A82 /* TrackService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070685912503CC33002A0A82 /* TrackService.swift */; };
 		070685962503DC36002A0A82 /* WorkoutListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 070685952503DC36002A0A82 /* WorkoutListViewController.swift */; };
 		0706E861250542C600CA9DD8 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0706E860250542C600CA9DD8 /* BaseCoordinator.swift */; };
@@ -33,11 +32,13 @@
 		07B4EB892503C117000AF8BE /* LocationServiceProto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B4EB882503C117000AF8BE /* LocationServiceProto.swift */; };
 		07C39EAB2507B12100ABBC23 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C39EAA2507B12100ABBC23 /* User.swift */; };
 		07C39EAE2507B2A800ABBC23 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C39EAD2507B2A800ABBC23 /* UserService.swift */; };
+		07D71D6A251A602500EA5609 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D71D69251A602500EA5609 /* Notification.swift */; };
 		07DC955324FBBFC1007923D3 /* UIViewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DC955224FBBFC1007923D3 /* UIViewController+Ext.swift */; };
 		07E2761E25069B65003ADBDD /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E2761D25069B65003ADBDD /* RegisterViewController.swift */; };
 		07E8C028251606EE00A26DE7 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E8C027251606EE00A26DE7 /* Observable.swift */; };
-		15704C5A5DA635C4463F7C12 /* Pods_GeekFit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4221CDA873F256F1CCA1677A /* Pods_GeekFit.framework */; };
-		308C70FAD19E4B6B9823F8F1 /* Pods_GeekFitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C2AEC10D0AE75F1D57CBC97 /* Pods_GeekFitTests.framework */; };
+		1829F2DA4860AD8A590A19A0 /* Pods_GeekFit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEBB385B9C0BD3AABDAC8292 /* Pods_GeekFit.framework */; };
+		510A9B9E10785C0FC54130F6 /* Pods_GeekFit_GeekFitUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F8C1B61847B73A7EA4BC7EC /* Pods_GeekFit_GeekFitUITests.framework */; };
+		FE25FBB7B48D9F52CDD86D0B /* Pods_GeekFitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4CA3FFE78FFD2D2112CC2FC /* Pods_GeekFitTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,18 +90,19 @@
 		07B4EB882503C117000AF8BE /* LocationServiceProto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServiceProto.swift; sourceTree = "<group>"; };
 		07C39EAA2507B12100ABBC23 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		07C39EAD2507B2A800ABBC23 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		07D71D69251A602500EA5609 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		07DC955224FBBFC1007923D3 /* UIViewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Ext.swift"; sourceTree = "<group>"; };
 		07E2761D25069B65003ADBDD /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		07E8C027251606EE00A26DE7 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
-		2FAF4F533A8EC4DDA98A385F /* Pods-GeekFit-GeekFitUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeekFit-GeekFitUITests.debug.xcconfig"; path = "Target Support Files/Pods-GeekFit-GeekFitUITests/Pods-GeekFit-GeekFitUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		4221CDA873F256F1CCA1677A /* Pods_GeekFit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GeekFit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		56B482EB84F0A3C89E01D408 /* Pods-GeekFit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeekFit.debug.xcconfig"; path = "Target Support Files/Pods-GeekFit/Pods-GeekFit.debug.xcconfig"; sourceTree = "<group>"; };
-		6FEE4D2D5745084573D0753C /* Pods-GeekFit-GeekFitUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeekFit-GeekFitUITests.release.xcconfig"; path = "Target Support Files/Pods-GeekFit-GeekFitUITests/Pods-GeekFit-GeekFitUITests.release.xcconfig"; sourceTree = "<group>"; };
-		7CEA13D02A017D32D0AD701D /* Pods-GeekFitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeekFitTests.release.xcconfig"; path = "Target Support Files/Pods-GeekFitTests/Pods-GeekFitTests.release.xcconfig"; sourceTree = "<group>"; };
-		8E698A16C8FD4E9643EF3290 /* Pods-GeekFitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeekFitTests.debug.xcconfig"; path = "Target Support Files/Pods-GeekFitTests/Pods-GeekFitTests.debug.xcconfig"; sourceTree = "<group>"; };
-		903E13376445A6424BAE5F71 /* Pods_GeekFit_GeekFitUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GeekFit_GeekFitUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9C2AEC10D0AE75F1D57CBC97 /* Pods_GeekFitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GeekFitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B5BF8F386A4E7F195B0111C2 /* Pods-GeekFit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeekFit.release.xcconfig"; path = "Target Support Files/Pods-GeekFit/Pods-GeekFit.release.xcconfig"; sourceTree = "<group>"; };
+		4B969E024F966377F09E0456 /* Pods-GeekFitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeekFitTests.release.xcconfig"; path = "Target Support Files/Pods-GeekFitTests/Pods-GeekFitTests.release.xcconfig"; sourceTree = "<group>"; };
+		542A6EAEB4FB13B2BD272E81 /* Pods-GeekFit-GeekFitUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeekFit-GeekFitUITests.debug.xcconfig"; path = "Target Support Files/Pods-GeekFit-GeekFitUITests/Pods-GeekFit-GeekFitUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		5B90F040F520A45356CFA352 /* Pods-GeekFitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeekFitTests.debug.xcconfig"; path = "Target Support Files/Pods-GeekFitTests/Pods-GeekFitTests.debug.xcconfig"; sourceTree = "<group>"; };
+		73632FC7D03473C6EB01F9E0 /* Pods-GeekFit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeekFit.release.xcconfig"; path = "Target Support Files/Pods-GeekFit/Pods-GeekFit.release.xcconfig"; sourceTree = "<group>"; };
+		8687961205BB33C4C4B4859A /* Pods-GeekFit-GeekFitUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeekFit-GeekFitUITests.release.xcconfig"; path = "Target Support Files/Pods-GeekFit-GeekFitUITests/Pods-GeekFit-GeekFitUITests.release.xcconfig"; sourceTree = "<group>"; };
+		8F8C1B61847B73A7EA4BC7EC /* Pods_GeekFit_GeekFitUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GeekFit_GeekFitUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EEBB385B9C0BD3AABDAC8292 /* Pods_GeekFit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GeekFit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4CA3FFE78FFD2D2112CC2FC /* Pods_GeekFitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GeekFitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F86ED0C0C4D9EE306F2FB61D /* Pods-GeekFit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeekFit.debug.xcconfig"; path = "Target Support Files/Pods-GeekFit/Pods-GeekFit.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				15704C5A5DA635C4463F7C12 /* Pods_GeekFit.framework in Frameworks */,
+				1829F2DA4860AD8A590A19A0 /* Pods_GeekFit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,7 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				308C70FAD19E4B6B9823F8F1 /* Pods_GeekFitTests.framework in Frameworks */,
+				FE25FBB7B48D9F52CDD86D0B /* Pods_GeekFitTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,7 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04770DD12FB54E5AE1B6B125 /* Pods_GeekFit_GeekFitUITests.framework in Frameworks */,
+				510A9B9E10785C0FC54130F6 /* Pods_GeekFit_GeekFitUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,7 +198,7 @@
 				079AEE0124FB64BE0038C2B0 /* GeekFitUITests */,
 				079AEDDE24FB64B90038C2B0 /* Products */,
 				33EC2F855D7D5F1CCE8C56FA /* Pods */,
-				C31561081EA702EFCE2BF586 /* Frameworks */,
+				4EB8281C5223F9AC91EBA09A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -262,6 +264,7 @@
 		079AEE1324FB672E0038C2B0 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				07D71D68251A601300EA5609 /* Notification */,
 				07E8C023251605CF00A26DE7 /* Observable */,
 				0724D66E2504FB0900A4C33B /* Application */,
 				07DC955124FBBFAF007923D3 /* Helpers */,
@@ -326,6 +329,14 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
+		07D71D68251A601300EA5609 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				07D71D69251A602500EA5609 /* Notification.swift */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
 		07DC955124FBBFAF007923D3 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -345,14 +356,24 @@
 		33EC2F855D7D5F1CCE8C56FA /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				56B482EB84F0A3C89E01D408 /* Pods-GeekFit.debug.xcconfig */,
-				B5BF8F386A4E7F195B0111C2 /* Pods-GeekFit.release.xcconfig */,
-				2FAF4F533A8EC4DDA98A385F /* Pods-GeekFit-GeekFitUITests.debug.xcconfig */,
-				6FEE4D2D5745084573D0753C /* Pods-GeekFit-GeekFitUITests.release.xcconfig */,
-				8E698A16C8FD4E9643EF3290 /* Pods-GeekFitTests.debug.xcconfig */,
-				7CEA13D02A017D32D0AD701D /* Pods-GeekFitTests.release.xcconfig */,
+				F86ED0C0C4D9EE306F2FB61D /* Pods-GeekFit.debug.xcconfig */,
+				73632FC7D03473C6EB01F9E0 /* Pods-GeekFit.release.xcconfig */,
+				542A6EAEB4FB13B2BD272E81 /* Pods-GeekFit-GeekFitUITests.debug.xcconfig */,
+				8687961205BB33C4C4B4859A /* Pods-GeekFit-GeekFitUITests.release.xcconfig */,
+				5B90F040F520A45356CFA352 /* Pods-GeekFitTests.debug.xcconfig */,
+				4B969E024F966377F09E0456 /* Pods-GeekFitTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		4EB8281C5223F9AC91EBA09A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EEBB385B9C0BD3AABDAC8292 /* Pods_GeekFit.framework */,
+				8F8C1B61847B73A7EA4BC7EC /* Pods_GeekFit_GeekFitUITests.framework */,
+				F4CA3FFE78FFD2D2112CC2FC /* Pods_GeekFitTests.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		66D6383323D4B68B98F90DF1 /* HappyCodingSupport */ = {
@@ -362,16 +383,6 @@
 			path = HappyCodingSupport;
 			sourceTree = "<group>";
 		};
-		C31561081EA702EFCE2BF586 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				4221CDA873F256F1CCA1677A /* Pods_GeekFit.framework */,
-				903E13376445A6424BAE5F71 /* Pods_GeekFit_GeekFitUITests.framework */,
-				9C2AEC10D0AE75F1D57CBC97 /* Pods_GeekFitTests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -379,13 +390,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 079AEE0724FB64BE0038C2B0 /* Build configuration list for PBXNativeTarget "GeekFit" */;
 			buildPhases = (
-				0010FFBCC7446786E5718492 /* [CP] Check Pods Manifest.lock */,
+				9EF020579B564984AE3BC4EC /* [CP] Check Pods Manifest.lock */,
 				079AEDD924FB64B90038C2B0 /* Sources */,
 				079AEDDA24FB64B90038C2B0 /* Frameworks */,
 				079AEDDB24FB64B90038C2B0 /* Resources */,
 				079AEE1024FB65E00038C2B0 /* ShellScript */,
-				4A2DDC6AEBF3EA21591E889D /* [CP] Embed Pods Frameworks */,
-				594D1D4BC1B1988A7D39E88A /* [CP] Copy Pods Resources */,
+				EF99043D54AE903B64340163 /* [CP] Embed Pods Frameworks */,
+				8C628F7124B59562E51F6E73 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -400,7 +411,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 079AEE0A24FB64BE0038C2B0 /* Build configuration list for PBXNativeTarget "GeekFitTests" */;
 			buildPhases = (
-				5A7F9BA5683CC40C331ED75F /* [CP] Check Pods Manifest.lock */,
+				B8BE799B99BEEA909B0B7411 /* [CP] Check Pods Manifest.lock */,
 				079AEDEF24FB64BE0038C2B0 /* Sources */,
 				079AEDF024FB64BE0038C2B0 /* Frameworks */,
 				079AEDF124FB64BE0038C2B0 /* Resources */,
@@ -419,12 +430,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 079AEE0D24FB64BE0038C2B0 /* Build configuration list for PBXNativeTarget "GeekFitUITests" */;
 			buildPhases = (
-				F4AFB1008275FD3AB4FDEE8A /* [CP] Check Pods Manifest.lock */,
+				41950B7DB81620ACD81C9FFB /* [CP] Check Pods Manifest.lock */,
 				079AEDFA24FB64BE0038C2B0 /* Sources */,
 				079AEDFB24FB64BE0038C2B0 /* Frameworks */,
 				079AEDFC24FB64BE0038C2B0 /* Resources */,
-				9BE4F20B3E0160144A291A21 /* [CP] Embed Pods Frameworks */,
-				719F592A1C742D1C671767D4 /* [CP] Copy Pods Resources */,
+				298E1DB7203285315DB12946 /* [CP] Embed Pods Frameworks */,
+				A86BF449B3CC7C0E0BCC0398 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -508,28 +519,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0010FFBCC7446786E5718492 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-GeekFit-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		079AEE1024FB65E00038C2B0 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -547,80 +536,7 @@
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
-		4A2DDC6AEBF3EA21591E889D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-GeekFit/Pods-GeekFit-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-GeekFit/Pods-GeekFit-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GeekFit/Pods-GeekFit-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		594D1D4BC1B1988A7D39E88A /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-GeekFit/Pods-GeekFit-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-GeekFit/Pods-GeekFit-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GeekFit/Pods-GeekFit-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5A7F9BA5683CC40C331ED75F /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-GeekFitTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		719F592A1C742D1C671767D4 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-GeekFit-GeekFitUITests/Pods-GeekFit-GeekFitUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-GeekFit-GeekFitUITests/Pods-GeekFit-GeekFitUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GeekFit-GeekFitUITests/Pods-GeekFit-GeekFitUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9BE4F20B3E0160144A291A21 /* [CP] Embed Pods Frameworks */ = {
+		298E1DB7203285315DB12946 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -637,7 +553,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GeekFit-GeekFitUITests/Pods-GeekFit-GeekFitUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F4AFB1008275FD3AB4FDEE8A /* [CP] Check Pods Manifest.lock */ = {
+		41950B7DB81620ACD81C9FFB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -659,6 +575,101 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		8C628F7124B59562E51F6E73 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GeekFit/Pods-GeekFit-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GeekFit/Pods-GeekFit-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GeekFit/Pods-GeekFit-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9EF020579B564984AE3BC4EC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GeekFit-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A86BF449B3CC7C0E0BCC0398 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GeekFit-GeekFitUITests/Pods-GeekFit-GeekFitUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GeekFit-GeekFitUITests/Pods-GeekFit-GeekFitUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GeekFit-GeekFitUITests/Pods-GeekFit-GeekFitUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B8BE799B99BEEA909B0B7411 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GeekFitTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EF99043D54AE903B64340163 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GeekFit/Pods-GeekFit-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GeekFit/Pods-GeekFit-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GeekFit/Pods-GeekFit-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -669,6 +680,7 @@
 				07E8C028251606EE00A26DE7 /* Observable.swift in Sources */,
 				071ED84925013020008FB556 /* Workout.swift in Sources */,
 				070685922503CC33002A0A82 /* TrackService.swift in Sources */,
+				07D71D6A251A602500EA5609 /* Notification.swift in Sources */,
 				079303402509201300981E31 /* EndWorkoutViewController.swift in Sources */,
 				070685962503DC36002A0A82 /* WorkoutListViewController.swift in Sources */,
 				0724D6702504FB1600A4C33B /* AppManager.swift in Sources */,
@@ -860,7 +872,7 @@
 		};
 		079AEE0824FB64BE0038C2B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 56B482EB84F0A3C89E01D408 /* Pods-GeekFit.debug.xcconfig */;
+			baseConfigurationReference = F86ED0C0C4D9EE306F2FB61D /* Pods-GeekFit.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -880,7 +892,7 @@
 		};
 		079AEE0924FB64BE0038C2B0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B5BF8F386A4E7F195B0111C2 /* Pods-GeekFit.release.xcconfig */;
+			baseConfigurationReference = 73632FC7D03473C6EB01F9E0 /* Pods-GeekFit.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -900,7 +912,7 @@
 		};
 		079AEE0B24FB64BE0038C2B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8E698A16C8FD4E9643EF3290 /* Pods-GeekFitTests.debug.xcconfig */;
+			baseConfigurationReference = 5B90F040F520A45356CFA352 /* Pods-GeekFitTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -923,7 +935,7 @@
 		};
 		079AEE0C24FB64BE0038C2B0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7CEA13D02A017D32D0AD701D /* Pods-GeekFitTests.release.xcconfig */;
+			baseConfigurationReference = 4B969E024F966377F09E0456 /* Pods-GeekFitTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -946,7 +958,7 @@
 		};
 		079AEE0E24FB64BE0038C2B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2FAF4F533A8EC4DDA98A385F /* Pods-GeekFit-GeekFitUITests.debug.xcconfig */;
+			baseConfigurationReference = 542A6EAEB4FB13B2BD272E81 /* Pods-GeekFit-GeekFitUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -967,7 +979,7 @@
 		};
 		079AEE0F24FB64BE0038C2B0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6FEE4D2D5745084573D0753C /* Pods-GeekFit-GeekFitUITests.release.xcconfig */;
+			baseConfigurationReference = 8687961205BB33C4C4B4859A /* Pods-GeekFit-GeekFitUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
