@@ -31,9 +31,23 @@ final class MainCoordinator: BaseCoordinator {
             self?.showEndWorkoutModule(time: time, length: length)
         }
         
+        controller.onConfigurePage = { [weak self] in
+            self?.showConfigureModule()
+        }
+        
         self.rootController = rootController
         self.mapViewController = controller
         setAsRoot(rootController)
+    }
+    
+    private func showConfigureModule() {
+        let controller = AppManager.shared.getScreenPage(identifier: ConfigureViewController.self)
+        
+        controller.didAvatarChanged = { [weak self] avatar in
+            self?.mapViewController?.onAvatarChanged(avatar)
+        }
+        
+        self.rootController?.pushViewController(controller, animated: true)
     }
     
     private func showWorkoutListModule() {

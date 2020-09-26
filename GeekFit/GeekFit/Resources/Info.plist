@@ -6,6 +6,8 @@
 	<string>Для определения местоположения пользователя</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>Для определения местоположения пользователя</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Для селфи</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
