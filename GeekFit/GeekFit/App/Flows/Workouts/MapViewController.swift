@@ -16,7 +16,7 @@ class MapViewController: UIViewController {
         didSet {
             mapView.delegate = self
             mapView.isTrafficEnabled = true
-            mapView.isMyLocationEnabled = true
+            mapView.isMyLocationEnabled = false
         }
     }
     
@@ -78,6 +78,7 @@ class MapViewController: UIViewController {
     
     // MARK: Properties
     var onWorkoutList: (() -> Void)?
+    var onConfigurePage: (() -> Void)?
     var onWorkoutEnd: ((Double, Double) -> Void)?
     var onLogout: (() -> Void)?
     
@@ -92,6 +93,11 @@ class MapViewController: UIViewController {
         
     // Различные маркеры
     let infoMarker = GMSMarker()
+    var currentPositionMarker = GMSMarker() {
+        didSet {
+            currentPositionMarker.map = mapView
+        }
+    }
     
     //  Текущий уровень зума на карте
     var currentZoomLevel: Float = 17
@@ -139,6 +145,11 @@ class MapViewController: UIViewController {
         
         // Подписываемся на изменение состояния locationService
         configureLocationServiceStatus()
+        
+        // Пытаемся загрузить аватарку
+        if let avatar = AppManager.shared.loadAvatarFromDisk() {
+            onAvatarChanged(avatar)
+        }
     }
     
     // Подписываемся на изменения segmentedControll
@@ -215,6 +226,10 @@ class MapViewController: UIViewController {
             // Перемещаем камеру в новую координату
             self?.mapView.animate(toLocation: coordinate)
             
+            // Показываем там наш маркер
+            self?.currentPositionMarker.position = coordinate
+            self?.currentPositionMarker.map = self?.mapView
+            
             // Добавляем координаты в путь
             self?.routePath?.add(coordinate)
             self?.route?.path = self?.routePath
@@ -263,6 +278,11 @@ class MapViewController: UIViewController {
             trackerManager.removePathWith(workoutID: activityID)
             workoutCount -= 1
         }
+    }
+    
+    func onAvatarChanged(_ avatar: UIImage?) {
+        guard let avatar = avatar else { return }
+        currentPositionMarker.icon = avatar.circularImage(40)
     }
 
     @IBAction func goHome(_ sender: Any) {
@@ -374,6 +394,10 @@ class MapViewController: UIViewController {
         
         // Переход к окну со списком тренировок
         onWorkoutList?()
+    }
+    
+    @IBAction func btnConfigureClicked(_ sender: Any) {
+        onConfigurePage?()
     }
 }
 

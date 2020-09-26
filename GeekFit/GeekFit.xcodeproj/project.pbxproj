@@ -20,6 +20,9 @@
 		079529822506811700EF63F8 /* Users.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 079529812506811700EF63F8 /* Users.storyboard */; };
 		079529852506818300EF63F8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079529842506818300EF63F8 /* LoginViewController.swift */; };
 		07952987250683EC00EF63F8 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07952986250683EC00EF63F8 /* LoginCoordinator.swift */; };
+		07987936251F407A009E42CD /* Configure.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07987935251F407A009E42CD /* Configure.storyboard */; };
+		0798793B251F4099009E42CD /* ConfigureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0798793A251F4099009E42CD /* ConfigureViewController.swift */; };
+		07987940251F566C009E42CD /* UIImage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0798793F251F566C009E42CD /* UIImage+Ext.swift */; };
 		079AEDE124FB64B90038C2B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079AEDE024FB64B90038C2B0 /* AppDelegate.swift */; };
 		079AEDE324FB64B90038C2B0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079AEDE224FB64B90038C2B0 /* SceneDelegate.swift */; };
 		079AEDE524FB64B90038C2B0 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079AEDE424FB64B90038C2B0 /* MapViewController.swift */; };
@@ -38,6 +41,7 @@
 		07E8C028251606EE00A26DE7 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E8C027251606EE00A26DE7 /* Observable.swift */; };
 		1829F2DA4860AD8A590A19A0 /* Pods_GeekFit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEBB385B9C0BD3AABDAC8292 /* Pods_GeekFit.framework */; };
 		510A9B9E10785C0FC54130F6 /* Pods_GeekFit_GeekFitUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F8C1B61847B73A7EA4BC7EC /* Pods_GeekFit_GeekFitUITests.framework */; };
+		EE1F90EE90A5F0E7D68DB6A6 /* AssetsUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB0AAC77A48B7792F27DDA5 /* AssetsUtils.swift */; };
 		FE25FBB7B48D9F52CDD86D0B /* Pods_GeekFitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4CA3FFE78FFD2D2112CC2FC /* Pods_GeekFitTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +76,9 @@
 		079529812506811700EF63F8 /* Users.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Users.storyboard; sourceTree = "<group>"; };
 		079529842506818300EF63F8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		07952986250683EC00EF63F8 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
+		07987935251F407A009E42CD /* Configure.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Configure.storyboard; sourceTree = "<group>"; };
+		0798793A251F4099009E42CD /* ConfigureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigureViewController.swift; sourceTree = "<group>"; };
+		0798793F251F566C009E42CD /* UIImage+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ext.swift"; sourceTree = "<group>"; };
 		079AEDDD24FB64B90038C2B0 /* GeekFit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeekFit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		079AEDE024FB64B90038C2B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		079AEDE224FB64B90038C2B0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +106,7 @@
 		5B90F040F520A45356CFA352 /* Pods-GeekFitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeekFitTests.debug.xcconfig"; path = "Target Support Files/Pods-GeekFitTests/Pods-GeekFitTests.debug.xcconfig"; sourceTree = "<group>"; };
 		73632FC7D03473C6EB01F9E0 /* Pods-GeekFit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeekFit.release.xcconfig"; path = "Target Support Files/Pods-GeekFit/Pods-GeekFit.release.xcconfig"; sourceTree = "<group>"; };
 		8687961205BB33C4C4B4859A /* Pods-GeekFit-GeekFitUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeekFit-GeekFitUITests.release.xcconfig"; path = "Target Support Files/Pods-GeekFit-GeekFitUITests/Pods-GeekFit-GeekFitUITests.release.xcconfig"; sourceTree = "<group>"; };
+		8DB0AAC77A48B7792F27DDA5 /* AssetsUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetsUtils.swift; sourceTree = "<group>"; };
 		8F8C1B61847B73A7EA4BC7EC /* Pods_GeekFit_GeekFitUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GeekFit_GeekFitUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEBB385B9C0BD3AABDAC8292 /* Pods_GeekFit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GeekFit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4CA3FFE78FFD2D2112CC2FC /* Pods_GeekFitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GeekFitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -190,6 +198,15 @@
 			path = Users;
 			sourceTree = "<group>";
 		};
+		07987934251F406B009E42CD /* Configure */ = {
+			isa = PBXGroup;
+			children = (
+				07987935251F407A009E42CD /* Configure.storyboard */,
+				0798793A251F4099009E42CD /* ConfigureViewController.swift */,
+			);
+			path = Configure;
+			sourceTree = "<group>";
+		};
 		079AEDD424FB64B90038C2B0 = {
 			isa = PBXGroup;
 			children = (
@@ -277,6 +294,7 @@
 		079AEE1424FB67760038C2B0 /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				07987934251F406B009E42CD /* Configure */,
 				079529832506817000EF63F8 /* Users */,
 				070685932503DC17002A0A82 /* Workouts */,
 			);
@@ -341,6 +359,7 @@
 			isa = PBXGroup;
 			children = (
 				07DC955224FBBFC1007923D3 /* UIViewController+Ext.swift */,
+				0798793F251F566C009E42CD /* UIImage+Ext.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -379,6 +398,7 @@
 		66D6383323D4B68B98F90DF1 /* HappyCodingSupport */ = {
 			isa = PBXGroup;
 			children = (
+				8DB0AAC77A48B7792F27DDA5 /* AssetsUtils.swift */,
 			);
 			path = HappyCodingSupport;
 			sourceTree = "<group>";
@@ -495,6 +515,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07987936251F407A009E42CD /* Configure.storyboard in Resources */,
 				079AEDED24FB64BD0038C2B0 /* LaunchScreen.storyboard in Resources */,
 				079529822506811700EF63F8 /* Users.storyboard in Resources */,
 				079AEDEA24FB64BD0038C2B0 /* Assets.xcassets in Resources */,
@@ -544,9 +565,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-GeekFit-GeekFitUITests/Pods-GeekFit-GeekFitUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-GeekFit-GeekFitUITests/Pods-GeekFit-GeekFitUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -583,9 +608,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-GeekFit/Pods-GeekFit-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-GeekFit/Pods-GeekFit-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -622,9 +651,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-GeekFit-GeekFitUITests/Pods-GeekFit-GeekFitUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-GeekFit-GeekFitUITests/Pods-GeekFit-GeekFitUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -661,9 +694,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-GeekFit/Pods-GeekFit-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-GeekFit/Pods-GeekFit-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -696,10 +733,13 @@
 				079AEDE124FB64B90038C2B0 /* AppDelegate.swift in Sources */,
 				07DC955324FBBFC1007923D3 /* UIViewController+Ext.swift in Sources */,
 				07952987250683EC00EF63F8 /* LoginCoordinator.swift in Sources */,
+				07987940251F566C009E42CD /* UIImage+Ext.swift in Sources */,
 				079529852506818300EF63F8 /* LoginViewController.swift in Sources */,
 				0706E861250542C600CA9DD8 /* BaseCoordinator.swift in Sources */,
+				0798793B251F4099009E42CD /* ConfigureViewController.swift in Sources */,
 				079AEDE324FB64B90038C2B0 /* SceneDelegate.swift in Sources */,
 				07B4EB892503C117000AF8BE /* LocationServiceProto.swift in Sources */,
+				EE1F90EE90A5F0E7D68DB6A6 /* AssetsUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

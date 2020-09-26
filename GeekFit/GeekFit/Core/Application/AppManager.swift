@@ -50,6 +50,7 @@ final class AppManager {
     enum StoryBoardName: String {
         case main = "Main"
         case users = "Users"
+        case configure = "Configure"
     }
     
     init() {
@@ -83,6 +84,8 @@ final class AppManager {
             storyboardName = .main
         case "LoginViewController", "RegisterViewController":
             storyboardName = .users
+        case "ConfigureViewController":
+            storyboardName = .configure
         default:
             storyboardName = nil
         }
@@ -115,5 +118,47 @@ final class AppManager {
         if isBlurEffectWasShown, let viewWithTag = rootViewController?.view.viewWithTag(1001) {
             viewWithTag.removeFromSuperview()
         }
+    }
+    
+    func saveAvatarToDisk(avatar: UIImage) {
+        if let imageData = avatar.pngData(),
+           var avatarFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+            // Файл у нас будет один avatar.png
+            avatarFilePath.appendPathComponent("avatar.png")
+            
+            if FileManager.default.fileExists(atPath: avatarFilePath.absoluteString) {
+                try? FileManager.default.removeItem(atPath: avatarFilePath.absoluteString)
+            }
+            
+            // Запишем на диск аватар
+            try? imageData.write(to: avatarFilePath)
+        }
+    }
+    
+    func loadAvatarFromDisk() -> UIImage? {
+        if var avatarFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+            // Файл у нас будет один avatar.png
+            avatarFilePath.appendPathComponent("avatar.png")
+            
+            if let imgData = try? Data(contentsOf: avatarFilePath),
+               let image = UIImage(data: imgData) {
+                return image
+            }
+        }
+        
+        return nil
+    }
+    
+    func resizeAvatar(_ avatar: UIImage, newSize: CGSize? = CGSize(width: 80, height: 80)) -> UIImage? {
+        // This is the rect that we've calculated out and this is what is actually used below
+        let rect = CGRect(x: 0, y: 0, width: newSize!.width, height: newSize!.height)
+        
+        // Actually do the resizing to the rect using the ImageContext stuff
+        UIGraphicsBeginImageContextWithOptions(newSize!, false, 1.0)
+        avatar.draw(in: rect)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+
+        return newImage
     }
 }
